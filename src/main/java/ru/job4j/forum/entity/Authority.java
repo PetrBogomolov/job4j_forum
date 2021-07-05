@@ -39,7 +39,8 @@ public class Authority {
             return false;
         }
         Authority authority1 = (Authority) o;
-        return id == authority1.id && Objects.equals(authority, authority1.authority);
+        return id == authority1.id
+                && Objects.equals(authority, authority1.authority);
     }
 
     @Override

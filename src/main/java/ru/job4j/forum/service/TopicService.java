@@ -19,7 +19,10 @@ public class TopicService {
     private final UserRepository userRepository;
     private final PostRepository postRepository;
 
-    public TopicService(TopicRepository topicRepository, StatusRepository statusRepository, UserRepository userRepository, PostRepository postRepository) {
+    public TopicService(TopicRepository topicRepository,
+                        StatusRepository statusRepository,
+                        UserRepository userRepository,
+                        PostRepository postRepository) {
         this.topicRepository = topicRepository;
         this.statusRepository = statusRepository;
         this.userRepository = userRepository;

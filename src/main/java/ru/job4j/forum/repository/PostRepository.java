@@ -3,9 +3,10 @@ package ru.job4j.forum.repository;
 import org.springframework.data.repository.CrudRepository;
 import ru.job4j.forum.entity.Post;
 
-import java.util.Collection;
+import java.util.List;
+
 
 public interface PostRepository extends CrudRepository<Post, Integer> {
 
-    Collection<Post> findByTopicId(int id);
+    List<Post> findByTopicId(int topicId);
 }

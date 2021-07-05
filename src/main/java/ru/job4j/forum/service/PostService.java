@@ -15,7 +15,9 @@ public class PostService {
     private final TopicRepository topicRepository;
     private final UserRepository userRepository;
 
-    public PostService(PostRepository postRepository, TopicRepository topicRepository, UserRepository userRepository) {
+    public PostService(PostRepository postRepository,
+                       TopicRepository topicRepository,
+                       UserRepository userRepository) {
         this.postRepository = postRepository;
         this.topicRepository = topicRepository;
         this.userRepository = userRepository;
@@ -53,6 +55,6 @@ public class PostService {
     }
 
     public List<Post> getAllPostsOfTopic(int topicId) {
-        return (List<Post>) postRepository.findByTopicId(topicId);
+        return postRepository.findByTopicId(topicId);
     }
 }

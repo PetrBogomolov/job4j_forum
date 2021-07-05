@@ -27,7 +27,7 @@
     </thead>
     <ul class="nav float-left">
         <li class="nav-item active">
-            <a class="nav-link" href="<c:url value='/createTopic'/>">
+            <a class="nav-link" href="<c:url value='/topic/create'/>">
                 Добавить тему
             </a>
         </li>
@@ -43,7 +43,7 @@
     <c:forEach items="${topics}" var="topic">
         <tr>
             <th>
-                <a href="<c:url value='/discussion?topicId=${topic.id}'/>">
+                <a href="<c:url value='/post/discussion?topicId=${topic.id}'/>">
                     <c:out value="${topic.name}"/>
                 </a>
             </th>
@@ -51,8 +51,8 @@
             <th><c:out value="${topic.status.name}"/></th>
             <th><c:out value="${topic.user.username}"/></th>
             <th><c:out value="${topic.posts.size()}"/></th>
-            <th><a href="<c:url value='/updateTopic?id=${topic.id}'/>"><i class="bi bi-pencil-square"></i></a></th>
-            <th><a href="<c:url value='/deleteTopic?id=${topic.id}'/>"><i class="bi bi-trash-fill"></i></a></th>
+            <th><a href="<c:url value='/topic/update?id=${topic.id}'/>"><i class="bi bi-pencil-square"></i></a></th>
+            <th><a href="<c:url value='/topic/delete?id=${topic.id}'/>"><i class="bi bi-trash-fill"></i></a></th>
         </tr>
     </c:forEach>
     </tbody>

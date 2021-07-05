@@ -1,24 +1,29 @@
 <?xml version="1.0"?>
 <!DOCTYPE module PUBLIC
         "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+        "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+<module name="Checker">
 
-        <module name="Checker">
+    <!--Расширение файла должно быть java, properties, xml-->
+    <property name="fileExtensions" value="java, properties, xml"/>
 
-        <!--Расширение файла должно быть java, properties, xml-->
-        <property name="fileExtensions" value="java, properties, xml"/>
+    <!-- Checks for Size Violations.                    -->
+    <!-- See http://checkstyle.sf.net/config_sizes.html -->
+    <module name="FileLength"/>
 
-        <!-- Checks for Size Violations.                    -->
-        <!-- See http://checkstyle.sf.net/config_sizes.html -->
-        <module name="FileLength"/>
+    <!-- Checks for Headers                                -->
+    <!-- See http://checkstyle.sf.net/config_header.html   -->
+    <!-- <module name="Header"> -->
+    <!--   <property name="headerFile" value="${checkstyle.header.file}"/> -->
+    <!--   <property name="fileExtensions" value="java"/> -->
+    <!-- </module> -->
 
-        <!-- Checks for Headers                                -->
-        <!-- See http://checkstyle.sf.net/config_header.html   -->
-        <!-- <module name="Header"> -->
-        <!--   <property name="headerFile" value="${checkstyle.header.file}"/> -->
-        <!--   <property name="fileExtensions" value="java"/> -->
-        <!-- </module> -->
+    <module name="LineLength">
+        <property name="fileExtensions" value="java"/>
+        <property name="max" value="120"/>
+    </module>
 
-        <module name="TreeWalker">
+    <module name="TreeWalker">
 
         <!-- Checks for Naming Conventions.                  -->
         <!-- See http://checkstyle.sf.net/config_naming.html -->
@@ -26,11 +31,9 @@
         <!--<module name="LocalFinalVariableName"/>-->
         <module name="LocalVariableName"/>
         <module name="MemberName"/>
-        <module name="MethodName">
-        <property name="format" value="^[a-zA-Z](_?[a-zA-Z0-9]+)*$"/>
-        </module>
+        <module name="MethodName"/>
         <module name="PackageName">
-        <property name="format" value="^[a-z]+(\.[a-z0-9]*)*$"/>
+            <property name="format" value="^[a-z]+(\.[a-z0-9]*)*$"/>
         </module>
         <module name="ParameterName"/>
         <module name="StaticVariableName"/>
@@ -40,10 +43,7 @@
         <!-- See http://checkstyle.sf.net/config_sizes.html -->
         <!--<module name="LineLength"/>-->
         <module name="MethodLength"/>
-        <module name="ParameterNumber">
-        <property name="max" value="10"/>
-        <property name="tokens" value="METHOD_DEF"/>
-        </module>
+        <!--<module name="ParameterNumber"/>-->
 
         <!-- Checks for whitespace                               -->
         <!-- See http://checkstyle.sf.net/config_whitespace.html -->
@@ -96,6 +96,6 @@
         <module name="TodoComment"/>
         <module name="UpperEll"/>
 
-        </module>
+    </module>
 
-        </module>
+</module>

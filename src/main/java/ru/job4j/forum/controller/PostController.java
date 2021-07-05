@@ -2,15 +2,13 @@ package ru.job4j.forum.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import ru.job4j.forum.entity.Post;
 import ru.job4j.forum.service.PostService;
 import ru.job4j.forum.service.TopicService;
 
 @Controller
+@RequestMapping("/post")
 public class PostController {
     private final PostService postService;
     private final TopicService topicService;
@@ -28,36 +26,37 @@ public class PostController {
         return "post/posts";
     }
 
-    @GetMapping("/createPost")
+    @GetMapping("/create")
     public String createPost(@RequestParam("topicId") int id, Model model) {
         model.addAttribute("topicId", id);
         return "post/createPost";
     }
 
-    @PostMapping("/savePost")
-    public String savePost(@RequestParam("topicId") int id, @ModelAttribute Post post) {
+    @PostMapping("/save")
+    public String savePost(@RequestParam("topicId") int id,
+                           @ModelAttribute Post post) {
         postService.save(post, id);
-        return String.format("redirect:/discussion?topicId=%d",id);
+        return String.format("redirect:/post/discussion?topicId=%d", id);
     }
 
-    @GetMapping("/deletePost")
+    @GetMapping("/delete")
     public String deletePost(@RequestParam("postId") int postId,
                              @RequestParam("topicId") int topicId) {
         postService.deleteById(postId);
-        return String.format("redirect:/discussion?topicId=%d",topicId);
+        return String.format("redirect:/post/discussion?topicId=%d", topicId);
     }
 
-    @GetMapping("/updatePost")
+    @GetMapping("/update")
     public String updateTopic(@RequestParam("postId") int postId, Model model) {
         model.addAttribute("post", postService.findById(postId));
         return "post/updatePost";
     }
 
-    @PostMapping("/saveUpdatePost")
+    @PostMapping("/saveUpdate")
     public String saveUpdateTopic(@RequestParam("postId") int postId,
                                   @RequestParam("topicId") int topicId,
                                   @ModelAttribute Post post) {
         postService.update(post, postId);
-        return String.format("redirect:/discussion?topicId=%d",topicId);
+        return String.format("redirect:/post/discussion?topicId=%d", topicId);
     }
 }

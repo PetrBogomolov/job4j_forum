@@ -26,7 +26,7 @@
     </thead>
     <ul class="nav float-left">
         <li class="nav-item active">
-            <a class="nav-link" href="<c:url value='/createPost?topicId=${topicId}'/>">
+            <a class="nav-link" href="<c:url value='/post/create?topicId=${topicId}'/>">
                 Добавить пост к теме  <c:out value="${topicName}"/>
             </a>
         </li>
@@ -43,8 +43,8 @@
             <th><c:out value="${post.description}"/></th>
             <th><fmt:formatDate type="date" value="${post.created}"/></th>
             <th><c:out value="${post.user.username}"/></th>
-            <th><a href="<c:url value='/updatePost?postId=${post.id}'/>"><i class="bi bi-pencil-square"></i></a></th>
-            <th><a href="<c:url value='/deletePost?postId=${post.id}&topicId=${post.topic.id}'/>"><i
+            <th><a href="<c:url value='/post/update?postId=${post.id}'/>"><i class="bi bi-pencil-square"></i></a></th>
+            <th><a href="<c:url value='/post/delete?postId=${post.id}&topicId=${post.topic.id}'/>"><i
                     class="bi bi-trash-fill"></i></a></th>
         </tr>
     </c:forEach>

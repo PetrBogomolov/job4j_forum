@@ -14,7 +14,9 @@ public class RegAndAuthService {
     private final UserRepository userRepository;
     private final PasswordEncoder encoder;
 
-    public RegAndAuthService(AuthorityRepository authorityRepository, UserRepository userRepository, PasswordEncoder encoder) {
+    public RegAndAuthService(AuthorityRepository authorityRepository,
+                             UserRepository userRepository,
+                             PasswordEncoder encoder) {
         this.authorityRepository = authorityRepository;
         this.userRepository = userRepository;
         this.encoder = encoder;
