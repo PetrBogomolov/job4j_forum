@@ -41,7 +41,7 @@
         <tr>
             <th><c:out value="${post.name}"/></th>
             <th><c:out value="${post.description}"/></th>
-            <th><fmt:formatDate type="date" value="${post.created}"/></th>
+            <th><fmt:formatDate type="date" value="${post.created}" pattern="d MMMM yyyy HH:mm"/></th>
             <th><c:out value="${post.user.username}"/></th>
             <th><a href="<c:url value='/post/update?postId=${post.id}'/>"><i class="bi bi-pencil-square"></i></a></th>
             <th><a href="<c:url value='/post/delete?postId=${post.id}&topicId=${post.topic.id}'/>"><i
