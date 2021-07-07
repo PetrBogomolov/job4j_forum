@@ -2,26 +2,23 @@ language: java
 jdk:
   - openjdk14
 
-sudo: false
-
 services:
   - postgresql
 
 before_install:
   - psql -c 'create database forum;' -U postgres
 
+sudo: false
+install: true
+
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-
-install: true
-script: mvn clean package -DskipTests=true
-
 notifications:
   email:
     recipients:
       -BogomoloffPD@yandex.ru
-    on_success: never # default: change
-    on_failure: always # default: always
+    on_success: never
+    on_failure: always
 
 env:
   global:
