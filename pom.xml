@@ -87,11 +87,16 @@
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+      <groupId>org.liquibase</groupId>
+      <artifactId>liquibase-core</artifactId>
+      <version>3.6.2</version>
+    </dependency>
+
   </dependencies>
 
   <build>
     <plugins>
-
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
