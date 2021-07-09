@@ -1,6 +1,9 @@
 ### Веб-приложение форум
 [![Build Status](https://app.travis-ci.com/PetrBogomolov/job4j_forum.svg?branch=master)](https://app.travis-ci.com/PetrBogomolov/job4j_forum)
 [![codecov](https://codecov.io/gh/PetrBogomolov/job4j_forum/branch/master/graph/badge.svg?token=CZVLJEON4F)](https://codecov.io/gh/PetrBogomolov/job4j_forum)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)](https://spring-boot-forum-12232.herokuapp.com)
+
+Проект размещён на облачной PaaS-платформе [Heroku](https://spring-boot-forum-12232.herokuapp.com).
 
 ### Технологии:
  
@@ -10,11 +13,15 @@
  
  * PostgreSQL
  
+ * Liquibase
+ 
  * Maven
  
  * JSP, HTML
  
  * Travis CI, CheckStyle
+ 
+ * Heroku
  
 ### Функционал:
  
